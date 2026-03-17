@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rotten Council — A Social Deduction Puzzle Game</title>
+  <meta name="description" content="Analyze statements. Cross-reference clues. Arrest the corrupt. A single-player social deduction puzzle game where every official has something to hide.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Rotten Council">
+  <meta property="og:description" content="A single-player social deduction puzzle game. Analyze statements, cross-reference clues, and arrest the corrupt.">
+  <meta property="og:image" content="assets/images/favicon.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="assets/images/backgrounds/mainmenu_bg_layer1.png" as="image">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ═══ NAV ═══════════════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__brand">
+        <img src="assets/images/favicon.png" alt="Rotten Council" class="nav__logo">
+        <span class="nav__title" data-i18n="nav.title">Rotten Council</span>
+      </a>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#how-to-play" class="nav__link" data-i18n="nav.how_to_play">How to Play</a></li>
+        <li><a href="#roles" class="nav__link" data-i18n="nav.roles">Roles</a></li>
+        <li><a href="#features" class="nav__link" data-i18n="nav.features">Features</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <div class="lang-switcher" id="lang-switcher">
+          <button class="lang-switcher__current" aria-label="Change language">
+            <span class="lang-switcher__label">EN</span>
+            <span class="lang-switcher__arrow">&#9662;</span>
+          </button>
+          <div class="lang-switcher__dropdown">
+            <button class="lang-switcher__option active" data-lang="en">English</button>
+          </div>
+        </div>
+        <a href="#" class="btn btn--primary btn--sm" data-i18n="nav.get_game" title="Coming Soon">Get the Game</a>
+      </div>
+
+      <button class="nav__mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__vignette"></div>
+    <div class="hero__fog">
+      <div class="hero__fog-layer"></div>
+      <div class="hero__fog-layer"></div>
+    </div>
+    <canvas class="hero__particles" id="hero-particles"></canvas>
+    <div class="hero__seal"></div>
+
+    <div class="hero__content">
+      <div class="hero__badge" data-i18n="hero.badge">In Development</div>
+      <h1 class="hero__title">
+        <span class="hero__title-line" data-i18n="hero.title_1">Rotten</span>
+        <span class="hero__title-line hero__title-accent" data-i18n="hero.title_2">Council</span>
+      </h1>
+      <p class="hero__tagline" data-i18n="hero.tagline">A single-player social deduction puzzle game</p>
+      <p class="hero__subtitle" data-i18n="hero.subtitle">Analyze statements &middot; Cross-reference clues &middot; Arrest the corrupt</p>
+      <div class="hero__actions">
+        <a href="#" class="btn btn--primary" data-i18n="hero.cta_game" title="Coming Soon">Wishlist on Steam</a>
+        <a href="#" class="btn btn--secondary btn--disabled" data-i18n="hero.cta_trailer">
+          Watch Trailer
+          <span class="btn__badge" data-i18n="hero.coming_soon">Soon</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero__bottom-fade"></div>
+    <div class="hero__scroll-hint" data-i18n="hero.scroll">Scroll</div>
+    <div class="hero__case-label">Case No. RC-2025<br>Classification: Pending</div>
+  </section>
+
+  <!-- ═══ SCREENSHOTS ═══════════════════════════════════════════════════ -->
+  <section class="screenshots" id="screenshots">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <h2 data-i18n="screenshots.title">Screenshots</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle" data-i18n="screenshots.subtitle">See the council in action</p>
+      </div>
+      <div class="screenshots__grid reveal reveal-delay-1">
+        <div class="screenshot-placeholder">
+          <span class="screenshot-placeholder__icon">&#128247;</span>
+          <span data-i18n="screenshots.coming_soon">Coming Soon</span>
+        </div>
+        <div class="screenshot-placeholder">
+          <span class="screenshot-placeholder__icon">&#128247;</span>
+          <span data-i18n="screenshots.coming_soon">Coming Soon</span>
+        </div>
+        <div class="screenshot-placeholder">
+          <span class="screenshot-placeholder__icon">&#128247;</span>
+          <span data-i18n="screenshots.coming_soon">Coming Soon</span>
+        </div>
+        <div class="screenshot-placeholder">
+          <span class="screenshot-placeholder__icon">&#128247;</span>
+          <span data-i18n="screenshots.coming_soon">Coming Soon</span>
+        </div>
+        <div class="screenshot-placeholder">
+          <span class="screenshot-placeholder__icon">&#128247;</span>
+          <span data-i18n="screenshots.coming_soon">Coming Soon</span>
+        </div>
+        <div class="screenshot-placeholder">
+          <span class="screenshot-placeholder__icon">&#128247;</span>
+          <span data-i18n="screenshots.coming_soon">Coming Soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW TO PLAY ═══════════════════════════════════════════════════ -->
+  <section class="how-to-play" id="how-to-play">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 data-i18n="howto.title">How to Play</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle" data-i18n="howto.subtitle">Uncover the corruption in four steps</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal reveal-delay-1">
+          <img src="assets/images/icons/pageicon.png" alt="" class="step__icon">
+          <h3 class="step__title" data-i18n="howto.step1.title">Examine</h3>
+          <p class="step__desc" data-i18n="howto.step1.desc">Study each official's statement around the circular council table. Every role provides a unique piece of information.</p>
+        </div>
+        <div class="step reveal reveal-delay-2">
+          <img src="assets/images/icons/dedective.png" alt="" class="step__icon">
+          <h3 class="step__title" data-i18n="howto.step2.title">Analyze</h3>
+          <p class="step__desc" data-i18n="howto.step2.desc">Determine who is telling the truth and who is lying. Corrupt officials always lie, but some innocents may be forced to lie too.</p>
+        </div>
+        <div class="step reveal reveal-delay-3">
+          <img src="assets/images/icons/interrogator.png" alt="" class="step__icon">
+          <h3 class="step__title" data-i18n="howto.step3.title">Cross-Reference</h3>
+          <p class="step__desc" data-i18n="howto.step3.desc">Use active abilities and hired professionals to verify your suspicions. Mark cards with notes and color ribbons to track your deductions.</p>
+        </div>
+        <div class="step reveal reveal-delay-4">
+          <img src="assets/images/icons/handcuffs_closed.png" alt="" class="step__icon">
+          <h3 class="step__title" data-i18n="howto.step4.title">Arrest</h3>
+          <p class="step__desc" data-i18n="howto.step4.desc">Arrest all corrupt officials to win. But be careful — three wrong arrests and you lose. And never arrest an innocent Mayor.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ROLES ═════════════════════════════════════════════════════════ -->
+  <section class="roles" id="roles">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <h2 data-i18n="roles.title">The Council</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle" data-i18n="roles.subtitle">15 unique roles, each with their own agenda. Hover to reveal their true nature.</p>
+      </div>
+
+      <!-- Clean Roles -->
+      <div class="roles__group reveal">
+        <div class="roles__group-header">
+          <h3 class="roles__group-title roles__group-title--clean" data-i18n="roles.clean_title">Innocent Officials</h3>
+          <div class="roles__group-line roles__group-line--clean"></div>
+        </div>
+        <div class="roles__grid">
+
+          <!-- Mayor -->
+          <div class="role-card" data-role="mayor">
+            <div class="role-card__inner">
+              <div class="role-card__face role-card__face--front">
+                <img src="assets/images/portraits/mayor_1.png" alt="Mayor" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.mayor.name">Mayor</div>
+                  <span class="role-card__type role-card__type--passive" data-i18n="role.type.passive">Passive</span>
+                  <p class="role-card__desc" data-i18n="role.mayor.desc">Always at Seat 1. Revealed at game start. Declares one official innocent.</p>
+                </div>
+              </div>
+              <div class="role-card__face role-card__face--back">
+                <img src="assets/images/portraits/mayor_c1.png" alt="Mayor (Corrupt)" class="role-card__portrait" loading="lazy">
+                <div class="role-card__corrupt-label" data-i18n="roles.corrupt_reveal">Corrupt</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Vice Mayor -->
+          <div class="role-card" data-role="vice_mayor">
+            <div class="role-card__inner">
+              <div class="role-card__face role-card__face--front">
+                <img src="assets/images/portraits/vice_mayor.png" alt="Vice Mayor" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.vice_mayor.name">Vice Mayor</div>
+                  <span class="role-card__type role-card__type--passive" data-i18n="role.type.passive">Passive</span>
+                  <p class="role-card__desc" data-i18n="role.vice_mayor.desc">Names two officials: one is corrupt, the other is innocent. But which is which?</p>
+                </div>
+              </div>
+              <div class="role-card__face role-card__face--back">
+                <img src="assets/images/portraits/vice_mayor_c.png" alt="Vice Mayor (Corrupt)" class="role-card__portrait" loading="lazy">
+                <div class="role-card__corrupt-label" data-i18n="roles.corrupt_reveal">Corrupt</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Legal Advocate -->
+          <div class="role-card" data-role="legal_advocate">
+            <div class="role-card__inner">
+              <div class="role-card__face role-card__face--front">
+                <img src="assets/images/portraits/legal_advocate.png" alt="Legal Advocate" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.legal_advocate.name">Legal Advocate</div>
+                  <span class="role-card__type role-card__type--active" data-i18n="role.type.active">Active</span>
+                  <p class="role-card__desc" data-i18n="role.legal_advocate.desc">Select one official to learn whether they are telling the truth or lying.</p>
+                </div>
+              </div>
+              <div class="role-card__face role-card__face--back">
+                <img src="assets/images/portraits/legal_advocate_c.png" alt="Legal Advocate (Corrupt)" class="role-card__portrait" loading="lazy">
+                <div class="role-card__corrupt-label" data-i18n="roles.corrupt_reveal">Corrupt</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- City Planner -->
+          <div class="role-card" data-role="city_planner">
+            <div class="role-card__inner">
+              <div class="role-card__face role-card__face--front">
+                <img src="assets/images/portraits/city_planner.png" alt="City Planner" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.city_planner.name">City Planner</div>
+                  <span class="role-card__type role-card__type--passive" data-i18n="role.type.passive">Passive</span>
+                  <p class="role-card__desc" data-i18n="role.city_planner.desc">Reports the distance to the nearest corrupt official around the table.</p>
+                </div>
+              </div>
+              <div class="role-card__face role-card__face--back">
+                <img src="assets/images/portraits/city_planner_c.png" alt="City Planner (Corrupt)" class="role-card__portrait" loading="lazy">
+                <div class="role-card__corrupt-label" data-i18n="roles.corrupt_reveal">Corrupt</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Council Chair -->
+          <div class="role-card" data-role="council_chair">
+            <div class="role-card__inner">
+              <div class="role-card__face role-card__face--front">
+                <img src="assets/images/portraits/council_chair.png" alt="Council Chair" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.council_chair.name">Council Chair</div>
+                  <span class="role-card__type role-card__type--passive" data-i18n="role.type.passive">Passive</span>
+                  <p class="role-card__desc" data-i18n="role.council_chair.desc">Reveals whether any two corrupt officials are seated adjacent to each other.</p>
+                </div>
+              </div>
+              <div class="role-card__face role-card__face--back">
+                <img src="assets/images/portraits/council_chair_c.png" alt="Council Chair (Corrupt)" class="role-card__portrait" loading="lazy">
+                <div class="role-card__corrupt-label" data-i18n="roles.corrupt_reveal">Corrupt</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Finance Director -->
+          <div class="role-card" data-role="finance_director">
+            <div class="role-card__inner">
+              <div class="role-card__face role-card__face--front">
+                <img src="assets/images/portraits/finance_director.png" alt="Finance Director" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.finance_director.name">Finance Director</div>
+                  <span class="role-card__type role-card__type--active" data-i18n="role.type.active">Active</span>
+                  <p class="role-card__desc" data-i18n="role.finance_director.desc">Select three officials and learn how many of them are corrupt.</p>
+                </div>
+              </div>
+              <div class="role-card__face role-card__face--back">
+                <img src="assets/images/portraits/finance_director_c.png" alt="Finance Director (Corrupt)" class="role-card__portrait" loading="lazy">
+                <div class="role-card__corrupt-label" data-i18n="roles.corrupt_reveal">Corrupt</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HR Director -->
+          <div class="role-card" data-role="hr_director">
+            <div class="role-card__inner">
+              <div class="role-card__face role-card__face--front">
+                <img src="assets/images/portraits/hr_director.png" alt="HR Director" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.hr_director.name">HR Director</div>
+                  <span class="role-card__type role-card__type--passive" data-i18n="role.type.passive">Passive</span>
+                  <p class="role-card__desc" data-i18n="role.hr_director.desc">Reports the number of officials currently under blackmail pressure.</p>
+                </div>
+              </div>
+              <div class="role-card__face role-card__face--back">
+                <img src="assets/images/portraits/hr_director_c.png" alt="HR Director (Corrupt)" class="role-card__portrait" loading="lazy">
+                <div class="role-card__corrupt-label" data-i18n="roles.corrupt_reveal">Corrupt</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- IT Director -->
+          <div class="role-card" data-role="it_director">
+            <div class="role-card__inner">
+              <div class="role-card__face role-card__face--front">
+                <img src="assets/images/portraits/it_director.png" alt="IT Director" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.it_director.name">IT Director</div>
+                  <span class="role-card__type role-card__type--passive" data-i18n="role.type.passive">Passive</span>
+                  <p class="role-card__desc" data-i18n="role.it_director.desc">Reports the length of the longest uninterrupted chain of innocent officials.</p>
+                </div>
+              </div>
+              <div class="role-card__face role-card__face--back">
+                <img src="assets/images/portraits/it_director_c.png" alt="IT Director (Corrupt)" class="role-card__portrait" loading="lazy">
+                <div class="role-card__corrupt-label" data-i18n="roles.corrupt_reveal">Corrupt</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Zoning Director -->
+          <div class="role-card" data-role="zoning_director">
+            <div class="role-card__inner">
+              <div class="role-card__face role-card__face--front">
+                <img src="assets/images/portraits/zoning_director.png" alt="Zoning Director" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.zoning_director.name">Zoning Director</div>
+                  <span class="role-card__type role-card__type--active" data-i18n="role.type.active">Active</span>
+                  <p class="role-card__desc" data-i18n="role.zoning_director.desc">Select two officials and learn whether they share the same alignment.</p>
+                </div>
+              </div>
+              <div class="role-card__face role-card__face--back">
+                <img src="assets/images/portraits/zoning_director_c.png" alt="Zoning Director (Corrupt)" class="role-card__portrait" loading="lazy">
+                <div class="role-card__corrupt-label" data-i18n="roles.corrupt_reveal">Corrupt</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Police Chief -->
+          <div class="role-card" data-role="police_chief">
+            <div class="role-card__inner">
+              <div class="role-card__face role-card__face--front">
+                <img src="assets/images/portraits/police_chief.png" alt="Police Chief" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.police_chief.name">Police Chief</div>
+                  <span class="role-card__type role-card__type--passive" data-i18n="role.type.passive">Passive</span>
+                  <p class="role-card__desc" data-i18n="role.police_chief.desc">Reveals whether at least one adjacent official is corrupt.</p>
+                </div>
+              </div>
+              <div class="role-card__face role-card__face--back">
+                <img src="assets/images/portraits/police_chief_c.png" alt="Police Chief (Corrupt)" class="role-card__portrait" loading="lazy">
+                <div class="role-card__corrupt-label" data-i18n="roles.corrupt_reveal">Corrupt</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Corrupt Roles -->
+      <div class="roles__group reveal">
+        <div class="roles__group-header">
+          <h3 class="roles__group-title roles__group-title--corrupt" data-i18n="roles.corrupt_title">The Corrupt</h3>
+          <div class="roles__group-line roles__group-line--corrupt"></div>
+        </div>
+        <div class="roles__grid">
+
+          <!-- Blackmailer -->
+          <div class="role-card role-card--corrupt">
+            <div class="role-card__inner">
+              <div class="role-card__face">
+                <img src="assets/images/portraits/council_chair_c.png" alt="Blackmailer" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.blackmailer.name">Blackmailer</div>
+                  <span class="role-card__type role-card__type--corrupt" data-i18n="role.type.effect">Special Effect</span>
+                  <p class="role-card__desc" data-i18n="role.blackmailer.desc">Forces adjacent innocent officials to lie permanently. They're still innocent — arresting them is a mistake.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Silencer -->
+          <div class="role-card role-card--corrupt">
+            <div class="role-card__inner">
+              <div class="role-card__face">
+                <img src="assets/images/portraits/hr_director_c.png" alt="Silencer" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.silencer.name">Silencer</div>
+                  <span class="role-card__type role-card__type--corrupt" data-i18n="role.type.effect">Special Effect</span>
+                  <p class="role-card__desc" data-i18n="role.silencer.desc">Silences one official at game start. They refuse to speak until the Silencer is arrested.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Converter -->
+          <div class="role-card role-card--corrupt">
+            <div class="role-card__inner">
+              <div class="role-card__face">
+                <img src="assets/images/portraits/it_director_c.png" alt="Converter" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.converter.name">Converter</div>
+                  <span class="role-card__type role-card__type--corrupt" data-i18n="role.type.effect">Special Effect</span>
+                  <p class="role-card__desc" data-i18n="role.converter.desc">Converts one innocent official to the corrupt side at game start. The traitor hides among the clean.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Manipulator -->
+          <div class="role-card role-card--corrupt">
+            <div class="role-card__inner">
+              <div class="role-card__face">
+                <img src="assets/images/portraits/finance_director_c.png" alt="Manipulator" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.manipulator.name">Manipulator</div>
+                  <span class="role-card__type role-card__type--corrupt" data-i18n="role.type.effect">Special Effect</span>
+                  <p class="role-card__desc" data-i18n="role.manipulator.desc">Suppresses the Mayor's testimony. The Mayor trusts no one while the Manipulator lives.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nepotist -->
+          <div class="role-card role-card--corrupt">
+            <div class="role-card__inner">
+              <div class="role-card__face">
+                <img src="assets/images/portraits/zoning_director_c.png" alt="Nepotist" class="role-card__portrait" loading="lazy">
+                <div class="role-card__info">
+                  <div class="role-card__name" data-i18n="role.nepotist.name">Nepotist</div>
+                  <span class="role-card__type role-card__type--corrupt" data-i18n="role.type.corrupt">Corrupt</span>
+                  <p class="role-card__desc" data-i18n="role.nepotist.desc">No special power. Hired without merit, disguised as an innocent, and always lying.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURES ══════════════════════════════════════════════════════ -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header section-header--center reveal">
+        <h2 data-i18n="features.title">Features</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle" data-i18n="features.subtitle">What makes Rotten Council unique</p>
+      </div>
+      <div class="features__grid">
+
+        <div class="feature reveal reveal-delay-1">
+          <span class="feature__icon--emoji">&#128269;</span>
+          <h3 class="feature__title" data-i18n="feature.deduction.title">Pure Deduction</h3>
+          <p class="feature__desc" data-i18n="feature.deduction.desc">No luck, no randomness in gameplay. Every puzzle has a logical solution. Cross-reference statements, use abilities, and deduce the truth.</p>
+        </div>
+
+        <div class="feature reveal reveal-delay-2">
+          <span class="feature__icon--emoji">&#127942;</span>
+          <h3 class="feature__title" data-i18n="feature.campaign.title">Campaign Mode</h3>
+          <p class="feature__desc" data-i18n="feature.campaign.desc">Progress through 30 levels across two acts. New roles and corrupt abilities unlock as you advance. One wrong move ends your run.</p>
+        </div>
+
+        <div class="feature reveal reveal-delay-3">
+          <span class="feature__icon--emoji">&#9881;</span>
+          <h3 class="feature__title" data-i18n="feature.custom.title">Custom Games</h3>
+          <p class="feature__desc" data-i18n="feature.custom.desc">Set player count (5-15), corrupt count, difficulty, and choose which roles appear. Design your own puzzle challenge.</p>
+        </div>
+
+        <div class="feature reveal reveal-delay-1">
+          <img src="assets/images/icons/dedective.png" alt="" class="feature__icon">
+          <h3 class="feature__title" data-i18n="feature.professionals.title">Hired Professionals</h3>
+          <p class="feature__desc" data-i18n="feature.professionals.desc">Deploy rare specialists — the Interrogator, Detective, and Janitor — as consumable abilities that carry between levels.</p>
+        </div>
+
+        <div class="feature reveal reveal-delay-2">
+          <span class="feature__icon--emoji">&#128203;</span>
+          <h3 class="feature__title" data-i18n="feature.annotation.title">Annotation Tools</h3>
+          <p class="feature__desc" data-i18n="feature.annotation.desc">Mark cards with stamps (innocent, suspect, unknown) and color ribbons to track your deductions as clues build up.</p>
+        </div>
+
+        <div class="feature reveal reveal-delay-3">
+          <span class="feature__icon--emoji">&#127891;</span>
+          <h3 class="feature__title" data-i18n="feature.tutorial.title">Interactive Tutorial</h3>
+          <p class="feature__desc" data-i18n="feature.tutorial.desc">A guided 15-step tutorial walks you through every mechanic with a fixed scenario. Master the basics before facing the real council.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__section">
+          <div class="footer__brand">
+            <img src="assets/images/favicon.png" alt="" class="footer__logo">
+            <span class="footer__name">Rotten Council</span>
+          </div>
+          <p class="footer__placeholder" data-i18n="footer.studio_placeholder">Developer studio info coming soon</p>
+        </div>
+
+        <div class="footer__section">
+          <h4 data-i18n="footer.links_title">Links</h4>
+          <ul class="footer__links">
+            <li><a href="#" data-i18n="footer.press_kit">Press Kit</a></li>
+            <li><a href="#" data-i18n="footer.privacy">Privacy Policy</a></li>
+            <li><a href="#" data-i18n="footer.terms">Terms of Service</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h4 data-i18n="footer.community_title">Community</h4>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link" aria-label="Steam" title="Steam">S</a>
+            <a href="#" class="footer__social-link" aria-label="Discord" title="Discord">D</a>
+            <a href="#" class="footer__social-link" aria-label="Twitter" title="Twitter/X">X</a>
+            <a href="#" class="footer__social-link" aria-label="YouTube" title="YouTube">Y</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copyright">&copy; 2025 Rotten Council. All rights reserved.</span>
+        <span class="footer__godot">Made with Godot Engine</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
