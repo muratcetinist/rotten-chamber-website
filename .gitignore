@@ -15,3 +15,6 @@ node_modules/
 # Asset generation workspace
 crop_icons.py
 assets/images/assetgenerated/
+
+# Internal art direction briefs
+hero_keyart_philosophy.md
