@@ -93,27 +93,6 @@
     });
   }
 
-  // ─── Role Card Flip (Mobile Touch) ────────────────────────────────────
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-
-  if (isTouchDevice) {
-    const roleCards = document.querySelectorAll('.role-card:not(.role-card--corrupt)');
-    let currentFlipped = null;
-
-    roleCards.forEach(function (card) {
-      card.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        if (currentFlipped && currentFlipped !== card) {
-          currentFlipped.classList.remove('flipped');
-        }
-
-        card.classList.toggle('flipped');
-        currentFlipped = card.classList.contains('flipped') ? card : null;
-      });
-    });
-  }
-
   // ─── Language Switcher Toggle ──────────────────────────────────────────
   const langSwitcher = document.getElementById('lang-switcher');
 

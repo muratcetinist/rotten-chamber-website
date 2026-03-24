@@ -1,0 +1,83 @@
+# CLAUDE.md: Rotten Council Website
+
+## Project Overview
+
+Marketing website for **Rotten Council**, a single-player social deduction puzzle game built in Godot. This is a static site with no build step and no framework. Open `index.html` in a browser to preview.
+
+The game repository lives at `../../` (parent `game-1/`). The game's own `CLAUDE.md` is the authoritative source for game mechanics, role names, campaign structure and data. **Always cross-reference game data before writing website content.** Role names, counts and campaign structure change in the game repo first.
+
+## Tech Stack
+
+- Plain HTML5 / CSS3 / vanilla JS
+- No bundler, no npm, no build step
+- Google Fonts loaded via CDN (Oswald, Crimson Pro)
+- i18n: JSON-based with `data-i18n` attributes; English is the HTML default
+
+## File Structure
+
+```
+website/
+├── index.html              Single-page site
+├── css/styles.css          All styles (variables, layout, components, responsive)
+├── js/
+│   ├── main.js             Nav, scroll reveal, particles
+│   └── i18n.js             Language detection, translation engine
+├── lang/
+│   └── en.json             English translation keys (fallback; HTML has defaults)
+├── assets/images/
+│   ├── exclusive/          Web-only art (AI-generated masters)
+│   │   ├── *_master.png    Full-resolution source images
+│   │   └── derived/        Crops: mobile, OG, etc.
+│   ├── portraits/          Game portrait copies (legacy, mostly unused now)
+│   ├── backgrounds/        Game background copies (legacy)
+│   ├── icons/              Game icon copies (placeholder, to be replaced with SVG)
+│   └── favicon.png         Temporary favicon
+├── WEBSITE_TODO.md          Asset & integration tracker
+└── hero_keyart_philosophy.md   Art direction brief for hero image
+```
+
+## Key Conventions
+
+### Writing Style
+- **No Oxford comma.** Write `A, B and C` not `A, B, and C`. Same for `or`.
+- **No em dash.** Use a colon, period or restructure the sentence instead.
+
+### Spoiler Policy
+- **No corrupt portraits** (`*_c.png`, `*_mc.png`, `*_fc.png`) displayed on site
+- **No flip-card reveal** mechanics (removed)
+- **Roles section** shows 4 showcase characters + a mystery block for corrupt side
+- **Mechanic details** kept minimal; the site sells atmosphere, not the full rulebook
+
+### Content Accuracy
+Before editing any game-related content (role names, campaign numbers, mechanic descriptions), verify against the game repo:
+- Role names & ordering: `scripts/core/game_enums.gd` (`CORRUPT_DISPLAY_ORDER`, `ROLE_*` constants)
+- Campaign structure: `scripts/systems/run_data.gd` (3 acts, 15 levels each = 45 total)
+- Professional abilities: `scripts/data/professional_data.gd`
+- Annotation stamps: `scripts/core/game_enums.gd` (innocent, corrupt, suspicious)
+
+### Asset Tiers
+1. **Exclusive** (`assets/images/exclusive/`): web-only, AI-generated art. These are the primary visuals.
+2. **Game copies** (`portraits/`, `backgrounds/`, `icons/`): copied from game repo for placeholder use. Icons in How to Play are placeholders to be replaced with custom SVG.
+
+### i18n
+- English text is embedded directly in HTML (source of truth for EN)
+- `lang/en.json` is a parallel reference. Keep it in sync when HTML content changes.
+- `data-i18n` keys on elements; `data-i18n-attr` for attributes
+- Only English is active; other languages are commented out in `i18n.js`
+
+### CSS Architecture
+- CSS custom properties in `:root` for colors, spacing, timing
+- BEM-like naming: `.block__element--modifier`
+- Responsive breakpoints: 1024px (tablet), 640px (mobile), 380px (small mobile)
+- Section atmospheric textures use `::before` pseudo-elements with low opacity
+- No CSS preprocessor. Plain CSS only.
+
+### Sections
+| Section | Description |
+|---|---|
+| Hero | Key art background, title, CTA buttons |
+| Screenshots | Placeholder grid (awaiting real game screenshots) |
+| How to Play | 4-step overview with placeholder icons |
+| Roles | 4 showcase cards + corrupt mystery block |
+| Features | 3x2 grid of feature cards |
+| Footer | Brand, links, social placeholders |

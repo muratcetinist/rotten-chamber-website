@@ -6,5 +6,8 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Godot import artifacts
+*.import
+
 # Dependencies (if added later)
 node_modules/
