@@ -11,3 +11,7 @@ Thumbs.db
 
 # Dependencies (if added later)
 node_modules/
+
+# Asset generation workspace
+crop_icons.py
+assets/images/assetgenerated/
