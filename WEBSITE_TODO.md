@@ -1,4 +1,4 @@
-# Rotten Council - Website Replan
+# Rotten Chamber - Website Replan
 
 Bu dosya, website yenilemesi icin guncel asset ve entegrasyon planidir. Eski genel checklist yerine, artik gercekten uretilmis gorseller, turetilmis crop'lar, entegrasyon adimlari ve eksik kalan non-visual isler takip edilir.
 
@@ -133,7 +133,7 @@ Bunlar tamamlanmadan yeni gorseller uretilmis olsa bile website donusumu bitmis 
 Bunlar gorsel uretilmesini zorunlu kilmiyor ama lansman kalitesini belirliyor.
 
 - [ ] **Game Logo / Logotype**
-  - Council seal + "ROTTEN COUNCIL" wordmark
+  - Chamber seal + "ROTTEN CHAMBER" wordmark
   - Gerekli varyantlar:
     - yatay logo
     - ikon-only

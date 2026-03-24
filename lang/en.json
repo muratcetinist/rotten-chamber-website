@@ -1,5 +1,5 @@
 {
-  "nav.title": "Rotten Council",
+  "nav.title": "Rotten Chamber",
   "nav.how_to_play": "How to Play",
   "nav.roles": "Roles",
   "nav.features": "Features",
@@ -7,7 +7,7 @@
 
   "hero.badge": "In Development",
   "hero.title_1": "Rotten",
-  "hero.title_2": "Council",
+  "hero.title_2": "Chamber",
   "hero.tagline": "A single-player social deduction puzzle game",
   "hero.subtitle": "Analyze statements \u00b7 Cross-reference clues \u00b7 Arrest the corrupt",
   "hero.cta_game": "Wishlist on Steam",
@@ -16,7 +16,7 @@
   "hero.scroll": "Scroll",
 
   "screenshots.title": "Screenshots",
-  "screenshots.subtitle": "See the council in action",
+  "screenshots.subtitle": "See the chamber in action",
 
   "howto.title": "How to Play",
   "howto.subtitle": "Uncover the corruption in four steps",
@@ -29,12 +29,12 @@
   "howto.step4.title": "Arrest",
   "howto.step4.desc": "Find every corrupt official. Three wrong arrests and you lose. Arrest the Mayor by mistake and it's over instantly.",
 
-  "roles.title": "The Council",
+  "roles.title": "The Chamber",
   "roles.subtitle": "15 unique roles. Each with a statement, an agenda and something to hide.",
   "roles.clean_title": "The Suspects",
   "roles.corrupt_title": "The Corrupt",
   "roles.more": "...and 6 more innocent roles to discover in-game.",
-  "roles.corrupt_mystery_title": "Hidden Among the Council",
+  "roles.corrupt_mystery_title": "Hidden Among the Chamber",
   "roles.corrupt_mystery_desc": "Corrupt officials disguise themselves as innocent roles. Some blackmail, some silence, some convert loyalties. Every lie is a clue if you know where to look.",
 
   "role.mayor.name": "Mayor",
@@ -53,13 +53,13 @@
   "role.manipulator.name": "Manipulator",
 
   "features.title": "Features",
-  "features.subtitle": "What makes Rotten Council unique",
+  "features.subtitle": "What makes Rotten Chamber unique",
   "feature.deduction.title": "Pure Deduction",
   "feature.deduction.desc": "No dice rolls. No card draws. Every puzzle is solvable through logic alone. If you got it wrong, you missed something.",
   "feature.campaign.title": "Campaign Mode",
   "feature.campaign.desc": "45 levels across three acts. New roles and corrupt abilities unlock as you advance. Lose a level and your entire run is over.",
   "feature.custom.title": "Custom Games",
-  "feature.custom.desc": "Choose the council size, the number of corrupt officials, the difficulty and which roles appear. Build exactly the puzzle you want.",
+  "feature.custom.desc": "Choose the chamber size, the number of corrupt officials, the difficulty and which roles appear. Build exactly the puzzle you want.",
   "feature.professionals.title": "Hired Professionals",
   "feature.professionals.desc": "Earn rare specialists between levels. Deploy them as one-shot abilities: interrogate a suspect, reveal an alignment or reset a used power.",
   "feature.annotation.title": "Annotation Tools",

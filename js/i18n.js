@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   ROTTEN COUNCIL — Internationalization Engine
+   ROTTEN CHAMBER — Internationalization Engine
    JSON-based translation with data-i18n attributes
    ═══════════════════════════════════════════════════════════════════════════ */
 

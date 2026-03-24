@@ -1,8 +1,8 @@
-# CLAUDE.md: Rotten Council Website
+# CLAUDE.md: Rotten Chamber Website
 
 ## Project Overview
 
-Marketing website for **Rotten Council**, a single-player social deduction puzzle game built in Godot. This is a static site with no build step and no framework. Open `index.html` in a browser to preview.
+Marketing website for **Rotten Chamber**, a single-player social deduction puzzle game built in Godot. This is a static site with no build step and no framework. Open `index.html` in a browser to preview.
 
 The game repository lives at `../../` (parent `game-1/`). The game's own `CLAUDE.md` is the authoritative source for game mechanics, role names, campaign structure and data. **Always cross-reference game data before writing website content.** Role names, counts and campaign structure change in the game repo first.
 

@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   ROTTEN COUNCIL — Main JavaScript
+   ROTTEN CHAMBER — Main JavaScript
    Nav behavior, scroll animations, card flip, dust particles
    ═══════════════════════════════════════════════════════════════════════════ */
 
