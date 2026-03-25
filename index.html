@@ -5,13 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rotten Chamber - A Social Deduction Puzzle Game</title>
   <meta name="description" content="Analyze statements. Cross-reference clues. Arrest the corrupt. A single-player social deduction puzzle game where every official has something to hide.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rottenchamber.com/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Rotten Chamber">
+  <meta property="og:title" content="Rotten Chamber - A Social Deduction Puzzle Game">
   <meta property="og:description" content="A single-player social deduction puzzle game. Analyze statements. Cross-reference clues. Arrest the corrupt.">
-  <meta property="og:image" content="assets/images/exclusive/derived/hero_key_art_og.png">
+  <meta property="og:image" content="https://rottenchamber.com/assets/images/exclusive/derived/hero_key_art_og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:url" content="https://rottenchamber.com/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Rotten Chamber">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Rotten Chamber - A Social Deduction Puzzle Game">
+  <meta name="twitter:description" content="Analyze statements. Cross-reference clues. Arrest the corrupt. A single-player social deduction puzzle game where every official has something to hide.">
+  <meta name="twitter:image" content="https://rottenchamber.com/assets/images/exclusive/derived/hero_key_art_og.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
@@ -21,8 +34,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
 
-  <!-- Preload critical assets -->
-  <link rel="preload" href="assets/images/exclusive/hero_key_art_master.png" as="image">
+  <!-- Preload critical assets (WebP: 76KB vs PNG: 1.8MB) -->
+  <link rel="preload" href="assets/images/exclusive/hero_key_art_master.webp" as="image" type="image/webp">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Rotten Chamber",
+    "description": "A single-player social deduction puzzle game. Analyze statements, cross-reference clues and arrest the corrupt. 15 unique roles, 45 levels across three acts and pure logic-based deduction.",
+    "url": "https://rottenchamber.com/",
+    "image": "https://rottenchamber.com/assets/images/exclusive/derived/hero_key_art_og.png",
+    "genre": ["Puzzle", "Social Deduction", "Logic"],
+    "gamePlatform": "PC",
+    "applicationCategory": "Game",
+    "operatingSystem": "Windows",
+    "numberOfPlayers": {
+      "@type": "QuantitativeValue",
+      "value": 1
+    },
+    "author": {
+      "@type": "Organization",
+      "name": "Rotten Chamber"
+    },
+    "inLanguage": "en"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Rotten Chamber",
+    "url": "https://rottenchamber.com/"
+  }
+  </script>
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="css/styles.css">
@@ -81,7 +127,8 @@
     <div class="hero__content">
       <div class="hero__badge" data-i18n="hero.badge">In Development</div>
       <h1 class="hero__title">
-        <img src="assets/images/exclusive/logo_wordmark_master.png" alt="Rotten Chamber" class="hero__logo">
+        <img src="assets/images/exclusive/logo_wordmark_master.png" alt="" aria-hidden="true" class="hero__logo">
+        <span class="sr-only">Rotten Chamber</span>
       </h1>
       <p class="hero__tagline" data-i18n="hero.tagline">A single-player social deduction puzzle game</p>
       <p class="hero__subtitle" data-i18n="hero.subtitle">Analyze statements &middot; Cross-reference clues &middot; Arrest the corrupt</p>
@@ -156,22 +203,22 @@
       </div>
       <ol class="steps">
         <li class="step reveal reveal-delay-1">
-          <img src="assets/images/icons/gen/icon_read.png" alt="" class="step__icon">
+          <img src="assets/images/icons/gen/icon_read.png" alt="Read" class="step__icon">
           <h3 class="step__title" data-i18n="howto.step1.title">Read</h3>
           <p class="step__desc" data-i18n="howto.step1.desc">Each official makes a statement. Some tell the truth. Some don't. Read carefully.</p>
         </li>
         <li class="step reveal reveal-delay-2">
-          <img src="assets/images/icons/gen/icon_deduce.png" alt="" class="step__icon">
+          <img src="assets/images/icons/gen/icon_deduce.png" alt="Deduce" class="step__icon">
           <h3 class="step__title" data-i18n="howto.step2.title">Deduce</h3>
           <p class="step__desc" data-i18n="howto.step2.desc">Cross-reference statements against each other. If two claims contradict, someone is lying.</p>
         </li>
         <li class="step reveal reveal-delay-3">
-          <img src="assets/images/icons/gen/icon_investigate.png" alt="" class="step__icon">
+          <img src="assets/images/icons/gen/icon_investigate.png" alt="Investigate" class="step__icon">
           <h3 class="step__title" data-i18n="howto.step3.title">Investigate</h3>
           <p class="step__desc" data-i18n="howto.step3.desc">Use abilities and hired professionals to test your theory. Mark suspects with stamps and ribbons.</p>
         </li>
         <li class="step reveal reveal-delay-4">
-          <img src="assets/images/icons/gen/icon_arrest.png" alt="" class="step__icon">
+          <img src="assets/images/icons/gen/icon_arrest.png" alt="Arrest" class="step__icon">
           <h3 class="step__title" data-i18n="howto.step4.title">Arrest</h3>
           <p class="step__desc" data-i18n="howto.step4.desc">Find every corrupt official. Three wrong arrests and you lose. Arrest the Mayor by mistake and it's over instantly.</p>
         </li>
@@ -297,25 +344,25 @@
       <div class="features__grid">
 
         <article class="feature reveal reveal-delay-1">
-          <img src="assets/images/icons/gen/icon_deduction.png" alt="" class="feature__icon">
+          <img src="assets/images/icons/gen/icon_deduction.png" alt="Deduction" class="feature__icon">
           <h3 class="feature__title" data-i18n="feature.deduction.title">Pure Deduction</h3>
           <p class="feature__desc" data-i18n="feature.deduction.desc">No dice rolls. No card draws. Every puzzle is solvable through logic alone. If you got it wrong, you missed something.</p>
         </article>
 
         <article class="feature reveal reveal-delay-2">
-          <img src="assets/images/icons/gen/icon_campaign.png" alt="" class="feature__icon">
+          <img src="assets/images/icons/gen/icon_campaign.png" alt="Campaign" class="feature__icon">
           <h3 class="feature__title" data-i18n="feature.campaign.title">Campaign Mode</h3>
           <p class="feature__desc" data-i18n="feature.campaign.desc">45 levels across three acts. New roles and corrupt abilities unlock as you advance. Lose a level and your entire run is over.</p>
         </article>
 
         <article class="feature reveal reveal-delay-3">
-          <img src="assets/images/icons/gen/icon_custom.png" alt="" class="feature__icon">
+          <img src="assets/images/icons/gen/icon_custom.png" alt="Custom games" class="feature__icon">
           <h3 class="feature__title" data-i18n="feature.custom.title">Custom Games</h3>
           <p class="feature__desc" data-i18n="feature.custom.desc">Choose the chamber size, the number of corrupt officials, the difficulty and which roles appear. Build exactly the puzzle you want.</p>
         </article>
 
         <article class="feature reveal reveal-delay-1">
-          <img src="assets/images/icons/gen/icon_professionals.png" alt="" class="feature__icon">
+          <img src="assets/images/icons/gen/icon_professionals.png" alt="Professionals" class="feature__icon">
           <h3 class="feature__title" data-i18n="feature.professionals.title">Hired Professionals</h3>
           <p class="feature__desc" data-i18n="feature.professionals.desc">Earn rare specialists between levels. Deploy them as one-shot abilities: interrogate a suspect, reveal an alignment or reset a used power.</p>
         </article>
@@ -331,7 +378,7 @@
         </article>
 
         <article class="feature reveal reveal-delay-3">
-          <img src="assets/images/icons/gen/icon_tutorial.png" alt="" class="feature__icon">
+          <img src="assets/images/icons/gen/icon_tutorial.png" alt="Tutorial" class="feature__icon">
           <h3 class="feature__title" data-i18n="feature.tutorial.title">Interactive Tutorial</h3>
           <p class="feature__desc" data-i18n="feature.tutorial.desc">A guided tutorial walks you through reading statements, using abilities and making your first arrest. Learn by doing, not by reading.</p>
         </article>
