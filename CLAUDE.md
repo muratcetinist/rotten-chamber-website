@@ -6,6 +6,13 @@ Marketing website for **Rotten Chamber**, a single-player social deduction puzzl
 
 The game repository lives at `../../` (parent `game-1/`). The game's own `CLAUDE.md` is the authoritative source for game mechanics, role names, campaign structure and data. **Always cross-reference game data before writing website content.** Role names, counts and campaign structure change in the game repo first.
 
+## Hosting & Domain
+
+- **Domain:** `rottenchamber.com` (managed via Cloudflare)
+- **Hosting:** GitHub Pages (repo: `muratcetinist/rotten-chamber-website`)
+- **Deploy:** automatic from `main` branch, no build step
+- **DNS:** Cloudflare DNS, CNAME file in repo root
+
 ## Tech Stack
 
 - Plain HTML5 / CSS3 / vanilla JS
@@ -32,6 +39,11 @@ website/
 │   ├── backgrounds/        Game background copies (legacy)
 │   ├── icons/              Game icon copies (placeholder, to be replaced with SVG)
 │   └── favicon.png         Temporary favicon
+├── robots.txt              Crawler directives + sitemap reference
+├── sitemap.xml             XML sitemap for search engines
+├── .nojekyll               Disables Jekyll processing on GitHub Pages
+├── 404.html                Themed error page (noir aesthetic, noindex)
+├── CNAME                   GitHub Pages custom domain (rottenchamber.com)
 ├── WEBSITE_TODO.md          Asset & integration tracker
 └── hero_keyart_philosophy.md   Art direction brief for hero image
 ```
@@ -76,7 +88,7 @@ Before editing any game-related content (role names, campaign numbers, mechanic 
 | Section | Description |
 |---|---|
 | Hero | Key art background, title, CTA buttons |
-| Screenshots | Placeholder grid (awaiting real game screenshots) |
+| Screenshots | 6 real gameplay screenshots with lightbox |
 | How to Play | 4-step overview with placeholder icons |
 | Roles | 4 showcase cards + corrupt mystery block |
 | Features | 3x2 grid of feature cards |
