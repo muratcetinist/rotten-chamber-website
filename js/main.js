@@ -28,6 +28,7 @@
     var docHeight = document.documentElement.scrollHeight - window.innerHeight;
     var percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
     scrollProgress.style.width = percent + '%';
+    scrollProgress.setAttribute('aria-valuenow', Math.round(percent));
   }
 
   window.addEventListener('scroll', updateScrollProgress, { passive: true });
@@ -134,10 +135,12 @@
     currentBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       langSwitcher.classList.toggle('open');
+      currentBtn.setAttribute('aria-expanded', langSwitcher.classList.contains('open'));
     });
 
     document.addEventListener('click', function () {
       langSwitcher.classList.remove('open');
+      currentBtn.setAttribute('aria-expanded', 'false');
     });
 
     langSwitcher.querySelectorAll('.lang-switcher__option').forEach(function (opt) {
@@ -167,6 +170,7 @@
   var lightboxCounter = document.getElementById('lightbox-counter');
   var screenshots = document.querySelectorAll('.screenshot[data-lightbox]');
   var currentIndex = 0;
+  var lightboxTrigger = null;
 
   function openLightbox(index) {
     if (!lightbox || !screenshots.length) return;
@@ -181,12 +185,22 @@
     lightboxCounter.textContent = 'Evidence ' + (index + 1) + ' of ' + screenshots.length;
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // Focus management: move focus into the dialog
+    var closeBtn = lightbox.querySelector('.lightbox__close');
+    if (closeBtn) closeBtn.focus();
   }
 
   function closeLightbox() {
     if (!lightbox) return;
     lightbox.classList.remove('active');
     document.body.style.overflow = '';
+
+    // Restore focus to the element that opened the lightbox
+    if (lightboxTrigger) {
+      lightboxTrigger.focus();
+      lightboxTrigger = null;
+    }
   }
 
   function navigateLightbox(delta) {
@@ -195,10 +209,27 @@
   }
 
   screenshots.forEach(function (shot, i) {
-    shot.addEventListener('click', function () { openLightbox(i); });
+    shot.addEventListener('click', function () {
+      lightboxTrigger = shot;
+      openLightbox(i);
+    });
+    // Keyboard activation for screenshot figures
+    shot.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        lightboxTrigger = shot;
+        openLightbox(i);
+      }
+    });
   });
 
   if (lightbox) {
+    var lightboxFocusable = [
+      lightbox.querySelector('.lightbox__close'),
+      lightbox.querySelector('.lightbox__prev'),
+      lightbox.querySelector('.lightbox__next')
+    ];
+
     lightbox.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
     lightbox.querySelector('.lightbox__prev').addEventListener('click', function () { navigateLightbox(-1); });
     lightbox.querySelector('.lightbox__next').addEventListener('click', function () { navigateLightbox(1); });
@@ -212,6 +243,23 @@
       if (e.key === 'Escape') closeLightbox();
       if (e.key === 'ArrowLeft') navigateLightbox(-1);
       if (e.key === 'ArrowRight') navigateLightbox(1);
+
+      // Focus trap within lightbox dialog
+      if (e.key === 'Tab') {
+        var first = lightboxFocusable[0];
+        var last = lightboxFocusable[lightboxFocusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          }
+        } else {
+          if (document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      }
     });
   }
 
