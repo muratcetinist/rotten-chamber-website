@@ -16,6 +16,11 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
+  <!-- Font preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+
   <!-- Preload critical assets -->
   <link rel="preload" href="assets/images/exclusive/hero_key_art_master.png" as="image">
 
@@ -24,12 +29,15 @@
 </head>
 <body>
 
+  <!-- ═══ SCROLL PROGRESS ═══════════════════════════════════════════════ -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
   <!-- ═══ NAV ═══════════════════════════════════════════════════════════ -->
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="#" class="nav__brand">
-        <img src="assets/images/favicon.png" alt="Rotten Chamber" class="nav__logo">
-        <span class="nav__title" data-i18n="nav.title">Rotten Chamber</span>
+        <img src="assets/images/favicon.png" alt="" class="nav__logo">
+        <img src="assets/images/exclusive/logo_wordmark_master.png" alt="Rotten Chamber" class="nav__wordmark">
       </a>
 
       <ul class="nav__links" id="nav-links">
@@ -48,7 +56,7 @@
             <button class="lang-switcher__option active" data-lang="en">English</button>
           </div>
         </div>
-        <a href="#" class="btn btn--primary btn--sm" data-i18n="nav.get_game" title="Coming Soon">Get the Game</a>
+        <a href="mailto:contact@rottenchamber.com" class="btn btn--secondary btn--sm" data-i18n="nav.contact">Contact</a>
       </div>
 
       <button class="nav__mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">&#9776;</button>
@@ -68,13 +76,12 @@
     <div class="hero__content">
       <div class="hero__badge" data-i18n="hero.badge">In Development</div>
       <h1 class="hero__title">
-        <span class="hero__title-line" data-i18n="hero.title_1">Rotten</span>
-        <span class="hero__title-line hero__title-accent" data-i18n="hero.title_2">Chamber</span>
+        <img src="assets/images/exclusive/logo_wordmark_master.png" alt="Rotten Chamber" class="hero__logo">
       </h1>
       <p class="hero__tagline" data-i18n="hero.tagline">A single-player social deduction puzzle game</p>
       <p class="hero__subtitle" data-i18n="hero.subtitle">Analyze statements &middot; Cross-reference clues &middot; Arrest the corrupt</p>
       <div class="hero__actions">
-        <a href="#" class="btn btn--primary" data-i18n="hero.cta_game" title="Coming Soon">Wishlist on Steam</a>
+        <a href="#screenshots" class="btn btn--primary" data-i18n="hero.cta_game">See the Game</a>
         <a href="#" class="btn btn--secondary btn--disabled" data-i18n="hero.cta_trailer">
           Watch Trailer
           <span class="btn__badge" data-i18n="hero.coming_soon">Soon</span>
@@ -95,25 +102,41 @@
         <div class="section-divider"></div>
         <p class="section-subtitle" data-i18n="screenshots.subtitle">See the chamber in action</p>
       </div>
-      <div class="screenshots__grid reveal reveal-delay-1">
-        <div class="screenshot">
+      <div class="screenshots__board reveal reveal-delay-1">
+        <div class="screenshot" data-lightbox>
+          <div class="screenshot__pin"></div>
           <img src="assets/images/screenshots/main-menu.png" alt="Main Menu" class="screenshot__img" loading="lazy">
         </div>
-        <div class="screenshot">
+        <div class="screenshot" data-lightbox>
+          <div class="screenshot__pin"></div>
           <img src="assets/images/screenshots/hero-mid-investigation.png" alt="Mid-game investigation with statements and annotations" class="screenshot__img" loading="lazy">
         </div>
-        <div class="screenshot">
+        <div class="screenshot" data-lightbox>
+          <div class="screenshot__pin"></div>
           <img src="assets/images/screenshots/active-ability-targeting.png" alt="Using active abilities to target suspects" class="screenshot__img" loading="lazy">
         </div>
-        <div class="screenshot">
+        <div class="screenshot" data-lightbox>
+          <div class="screenshot__pin"></div>
           <img src="assets/images/screenshots/high-tension-reveal.png" alt="Arrests and corrupt reveals" class="screenshot__img" loading="lazy">
         </div>
-        <div class="screenshot">
+        <div class="screenshot" data-lightbox>
+          <div class="screenshot__pin"></div>
           <img src="assets/images/screenshots/wide-table-late-game.png" alt="Late-game chamber with 13 officials" class="screenshot__img" loading="lazy">
         </div>
-        <div class="screenshot">
+        <div class="screenshot" data-lightbox>
+          <div class="screenshot__pin"></div>
           <img src="assets/images/screenshots/professional-toolkit-usage.png" alt="Deploying hired professionals" class="screenshot__img" loading="lazy">
         </div>
+      </div>
+
+      <!-- Lightbox Modal -->
+      <div class="lightbox" id="lightbox">
+        <button class="lightbox__close" aria-label="Close">&times;</button>
+        <button class="lightbox__prev" aria-label="Previous">&#8249;</button>
+        <button class="lightbox__next" aria-label="Next">&#8250;</button>
+        <img class="lightbox__img" id="lightbox-img" alt="">
+        <div class="lightbox__caption" id="lightbox-caption"></div>
+        <div class="lightbox__counter" id="lightbox-counter"></div>
       </div>
     </div>
   </section>
@@ -128,22 +151,22 @@
       </div>
       <div class="steps">
         <div class="step reveal reveal-delay-1">
-          <img src="assets/images/icons/howto_read.png" alt="" class="step__icon">
+          <img src="assets/images/icons/gen/icon_read.png" alt="" class="step__icon">
           <h3 class="step__title" data-i18n="howto.step1.title">Read</h3>
           <p class="step__desc" data-i18n="howto.step1.desc">Each official makes a statement. Some tell the truth. Some don't. Read carefully.</p>
         </div>
         <div class="step reveal reveal-delay-2">
-          <img src="assets/images/icons/howto_deduce.png" alt="" class="step__icon">
+          <img src="assets/images/icons/gen/icon_deduce.png" alt="" class="step__icon">
           <h3 class="step__title" data-i18n="howto.step2.title">Deduce</h3>
           <p class="step__desc" data-i18n="howto.step2.desc">Cross-reference statements against each other. If two claims contradict, someone is lying.</p>
         </div>
         <div class="step reveal reveal-delay-3">
-          <img src="assets/images/icons/howto_investigate.png" alt="" class="step__icon">
+          <img src="assets/images/icons/gen/icon_investigate.png" alt="" class="step__icon">
           <h3 class="step__title" data-i18n="howto.step3.title">Investigate</h3>
           <p class="step__desc" data-i18n="howto.step3.desc">Use abilities and hired professionals to test your theory. Mark suspects with stamps and ribbons.</p>
         </div>
         <div class="step reveal reveal-delay-4">
-          <img src="assets/images/icons/howto_arrest.png" alt="" class="step__icon">
+          <img src="assets/images/icons/gen/icon_arrest.png" alt="" class="step__icon">
           <h3 class="step__title" data-i18n="howto.step4.title">Arrest</h3>
           <p class="step__desc" data-i18n="howto.step4.desc">Find every corrupt official. Three wrong arrests and you lose. Arrest the Mayor by mistake and it's over instantly.</p>
         </div>
@@ -171,7 +194,10 @@
           <!-- Mayor -->
           <div class="showcase-card reveal reveal-delay-1">
             <div class="showcase-card__portrait-wrap">
-              <img src="assets/images/exclusive/mayor_showcase_master.png" alt="Mayor" class="showcase-card__portrait" loading="lazy">
+              <picture>
+                <source srcset="assets/images/exclusive/mayor_showcase_master.webp" type="image/webp">
+                <img src="assets/images/exclusive/mayor_showcase_master.png" alt="Mayor" class="showcase-card__portrait" loading="lazy">
+              </picture>
             </div>
             <div class="showcase-card__info">
               <div class="showcase-card__name" data-i18n="role.mayor.name">Mayor</div>
@@ -182,7 +208,10 @@
           <!-- Legal Advocate -->
           <div class="showcase-card reveal reveal-delay-2">
             <div class="showcase-card__portrait-wrap">
-              <img src="assets/images/exclusive/legal_advocate_showcase_master.png" alt="Legal Advocate" class="showcase-card__portrait" loading="lazy">
+              <picture>
+                <source srcset="assets/images/exclusive/legal_advocate_showcase_master.webp" type="image/webp">
+                <img src="assets/images/exclusive/legal_advocate_showcase_master.png" alt="Legal Advocate" class="showcase-card__portrait" loading="lazy">
+              </picture>
             </div>
             <div class="showcase-card__info">
               <div class="showcase-card__name" data-i18n="role.legal_advocate.name">Legal Advocate</div>
@@ -193,7 +222,10 @@
           <!-- Council Chair -->
           <div class="showcase-card reveal reveal-delay-3">
             <div class="showcase-card__portrait-wrap">
-              <img src="assets/images/exclusive/council_chair_showcase_master.png" alt="Council Chair" class="showcase-card__portrait" loading="lazy">
+              <picture>
+                <source srcset="assets/images/exclusive/council_chair_showcase_master.webp" type="image/webp">
+                <img src="assets/images/exclusive/council_chair_showcase_master.png" alt="Council Chair" class="showcase-card__portrait" loading="lazy">
+              </picture>
             </div>
             <div class="showcase-card__info">
               <div class="showcase-card__name" data-i18n="role.council_chair.name">Council Chair</div>
@@ -204,7 +236,10 @@
           <!-- Police Chief -->
           <div class="showcase-card reveal reveal-delay-4">
             <div class="showcase-card__portrait-wrap">
-              <img src="assets/images/exclusive/police_chief_showcase_master.png" alt="Police Chief" class="showcase-card__portrait" loading="lazy">
+              <picture>
+                <source srcset="assets/images/exclusive/police_chief_showcase_master.webp" type="image/webp">
+                <img src="assets/images/exclusive/police_chief_showcase_master.png" alt="Police Chief" class="showcase-card__portrait" loading="lazy">
+              </picture>
             </div>
             <div class="showcase-card__info">
               <div class="showcase-card__name" data-i18n="role.police_chief.name">Police Chief</div>
@@ -224,18 +259,21 @@
         </div>
         <div class="corrupt-mystery">
           <div class="corrupt-mystery__art">
-            <img src="assets/images/exclusive/corrupt_mystery_master.png" alt="Hidden corruption" class="corrupt-mystery__img" loading="lazy">
+            <picture>
+              <source srcset="assets/images/exclusive/corrupt_mystery_master.webp" type="image/webp">
+              <img src="assets/images/exclusive/corrupt_mystery_master.png" alt="Hidden corruption" class="corrupt-mystery__img" loading="lazy">
+            </picture>
             <div class="corrupt-mystery__overlay"></div>
           </div>
           <div class="corrupt-mystery__content">
             <h3 class="corrupt-mystery__title" data-i18n="roles.corrupt_mystery_title">Hidden Among the Chamber</h3>
             <p class="corrupt-mystery__desc" data-i18n="roles.corrupt_mystery_desc">Corrupt officials disguise themselves as innocent roles. Some blackmail, some silence, some convert loyalties. Every lie is a clue if you know where to look.</p>
             <div class="corrupt-mystery__roles">
-              <span class="corrupt-mystery__tag" data-i18n="role.crook.name">Crook</span>
-              <span class="corrupt-mystery__tag" data-i18n="role.silencer.name">Silencer</span>
-              <span class="corrupt-mystery__tag" data-i18n="role.blackmailer.name">Blackmailer</span>
-              <span class="corrupt-mystery__tag" data-i18n="role.converter.name">Converter</span>
-              <span class="corrupt-mystery__tag" data-i18n="role.manipulator.name">Manipulator</span>
+              <span class="corrupt-mystery__tag" data-i18n="role.crook.name">Crook<img src="assets/images/game-icons/corrupticon_noclown.png" alt="" class="corrupt-mystery__tag-icon"></span>
+              <span class="corrupt-mystery__tag" data-i18n="role.silencer.name">Silencer<img src="assets/images/game-icons/corrupticon_noclown.png" alt="" class="corrupt-mystery__tag-icon"></span>
+              <span class="corrupt-mystery__tag" data-i18n="role.blackmailer.name">Blackmailer<img src="assets/images/game-icons/corrupticon_noclown.png" alt="" class="corrupt-mystery__tag-icon"></span>
+              <span class="corrupt-mystery__tag" data-i18n="role.converter.name">Converter<img src="assets/images/game-icons/corrupticon_noclown.png" alt="" class="corrupt-mystery__tag-icon"></span>
+              <span class="corrupt-mystery__tag" data-i18n="role.manipulator.name">Manipulator<img src="assets/images/game-icons/corrupticon_noclown.png" alt="" class="corrupt-mystery__tag-icon"></span>
             </div>
           </div>
         </div>
@@ -254,31 +292,41 @@
       <div class="features__grid">
 
         <div class="feature reveal reveal-delay-1">
+          <img src="assets/images/icons/gen/icon_deduction.png" alt="" class="feature__icon">
           <h3 class="feature__title" data-i18n="feature.deduction.title">Pure Deduction</h3>
           <p class="feature__desc" data-i18n="feature.deduction.desc">No dice rolls. No card draws. Every puzzle is solvable through logic alone. If you got it wrong, you missed something.</p>
         </div>
 
         <div class="feature reveal reveal-delay-2">
+          <img src="assets/images/icons/gen/icon_campaign.png" alt="" class="feature__icon">
           <h3 class="feature__title" data-i18n="feature.campaign.title">Campaign Mode</h3>
           <p class="feature__desc" data-i18n="feature.campaign.desc">45 levels across three acts. New roles and corrupt abilities unlock as you advance. Lose a level and your entire run is over.</p>
         </div>
 
         <div class="feature reveal reveal-delay-3">
+          <img src="assets/images/icons/gen/icon_custom.png" alt="" class="feature__icon">
           <h3 class="feature__title" data-i18n="feature.custom.title">Custom Games</h3>
           <p class="feature__desc" data-i18n="feature.custom.desc">Choose the chamber size, the number of corrupt officials, the difficulty and which roles appear. Build exactly the puzzle you want.</p>
         </div>
 
         <div class="feature reveal reveal-delay-1">
+          <img src="assets/images/icons/gen/icon_professionals.png" alt="" class="feature__icon">
           <h3 class="feature__title" data-i18n="feature.professionals.title">Hired Professionals</h3>
           <p class="feature__desc" data-i18n="feature.professionals.desc">Earn rare specialists between levels. Deploy them as one-shot abilities: interrogate a suspect, reveal an alignment or reset a used power.</p>
         </div>
 
         <div class="feature reveal reveal-delay-2">
+          <div class="feature__stamps">
+            <img src="assets/images/stamps/secure.png" alt="" class="feature__stamp">
+            <img src="assets/images/stamps/susp.png" alt="" class="feature__stamp">
+            <img src="assets/images/stamps/question.png" alt="" class="feature__stamp">
+          </div>
           <h3 class="feature__title" data-i18n="feature.annotation.title">Annotation Tools</h3>
           <p class="feature__desc" data-i18n="feature.annotation.desc">Mark cards with stamps (innocent, corrupt, suspicious) and color ribbons to track your deductions as clues build up.</p>
         </div>
 
         <div class="feature reveal reveal-delay-3">
+          <img src="assets/images/icons/gen/icon_tutorial.png" alt="" class="feature__icon">
           <h3 class="feature__title" data-i18n="feature.tutorial.title">Interactive Tutorial</h3>
           <p class="feature__desc" data-i18n="feature.tutorial.desc">A guided tutorial walks you through reading statements, using abilities and making your first arrest. Learn by doing, not by reading.</p>
         </div>
@@ -289,34 +337,48 @@
 
   <!-- ═══ FOOTER ════════════════════════════════════════════════════════ -->
   <footer class="footer">
+    <img src="assets/images/seals/act1_seal.png" alt="" class="footer__seal" aria-hidden="true">
     <div class="container">
       <div class="footer__inner">
         <div class="footer__section">
           <div class="footer__brand">
             <img src="assets/images/favicon.png" alt="" class="footer__logo">
-            <span class="footer__name">Rotten Chamber</span>
+            <img src="assets/images/exclusive/logo_wordmark_master.png" alt="Rotten Chamber" class="footer__wordmark">
           </div>
-          <p class="footer__placeholder" data-i18n="footer.studio_placeholder">Developer studio info coming soon</p>
+          <p class="footer__tagline" data-i18n="footer.tagline">A single-player social deduction puzzle game.<br>Analyze statements. Arrest the corrupt.</p>
         </div>
 
         <div class="footer__section">
-          <h4 data-i18n="footer.links_title">Links</h4>
-          <ul class="footer__links">
-            <!-- <li><a href="#" data-i18n="footer.press_kit">Press Kit</a></li> -->
-            <!-- <li><a href="#" data-i18n="footer.privacy">Privacy Policy</a></li> -->
-            <!-- <li><a href="#" data-i18n="footer.terms">Terms of Service</a></li> -->
-            <li><a href="mailto:contact@rottenchamber.com" data-i18n="footer.contact">Contact</a></li>
-          </ul>
+          <h4 data-i18n="footer.social_title">Follow</h4>
+          <div class="footer__social">
+            <a href="#" class="footer__social-link footer__social-link--soon" aria-label="Steam">
+              <svg viewBox="0 0 16 16" fill="currentColor" width="20" height="20"><path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.2 2.2 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.22 2.22 0 0 1-1.312-1.568L.33 10.333Z"/><path d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.7 1.7 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027m2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048"/></svg>
+              <span class="footer__social-tooltip">Coming Soon</span>
+            </a>
+            <a href="#" class="footer__social-link footer__social-link--soon" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span class="footer__social-tooltip">Coming Soon</span>
+            </a>
+            <a href="#" class="footer__social-link footer__social-link--soon" aria-label="X">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              <span class="footer__social-tooltip">Coming Soon</span>
+            </a>
+          </div>
         </div>
 
       </div>
 
       <div class="footer__bottom">
         <span class="footer__copyright">&copy; 2026 Rotten Chamber. All rights reserved.</span>
-        <span class="footer__godot">Made with Godot Engine</span>
+        <span class="footer__godot">
+          Made with Godot Engine
+        </span>
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">&#8593;</button>
 
   <!-- Scripts -->
   <script src="js/i18n.js"></script>

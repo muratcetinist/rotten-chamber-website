@@ -132,16 +132,16 @@ Bunlar tamamlanmadan yeni gorseller uretilmis olsa bile website donusumu bitmis 
 
 Bunlar gorsel uretilmesini zorunlu kilmiyor ama lansman kalitesini belirliyor.
 
-- [ ] **Game Logo / Logotype**
-  - Chamber seal + "ROTTEN CHAMBER" wordmark
-  - Gerekli varyantlar:
-    - yatay logo
-    - ikon-only
-    - acik zemin versiyonu
-    - monokrom versiyon
+- [x] **Game Logo / Logotype**
+  - Wordmark logo entegre edildi (`assets/images/assetgenerated/logo.png`)
+  - Kullanim yerleri: hero title, nav brand, footer brand
+  - Kalan varyantlar (monokrom, acik zemin) ileride gerekirse uretilecek
 
-- [ ] **Store Page URL**
-  - Steam / itch / store linki
+- [ ] **Store Page URL + Steam Wishlist Butonu**
+  - Steam App ID alindiginda:
+    - Hero CTA butonunu Steam logolu stilize butona cevir (SVG Steam logo + Steam marka renkleri)
+    - Opsiyonel: Steam Store Widget (iframe) ekle (`https://store.steampowered.com/widget/APP_ID/`)
+    - Resmi branding rehberi: `https://partner.steamgames.com/doc/marketing/branding`
   - CTA butonlari hala `#`
 
 - [x] **Gameplay Screenshots** (6 adet)

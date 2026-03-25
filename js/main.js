@@ -19,6 +19,38 @@
   window.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
 
+  // ─── Scroll Progress Bar ─────────────────────────────────────────────
+  var scrollProgress = document.getElementById('scroll-progress');
+
+  function updateScrollProgress() {
+    if (!scrollProgress) return;
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    scrollProgress.style.width = percent + '%';
+  }
+
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
+  updateScrollProgress();
+
+  // ─── Back to Top ─────────────────────────────────────────────────────
+  var backToTop = document.getElementById('back-to-top');
+
+  function updateBackToTop() {
+    if (!backToTop) return;
+    var show = window.scrollY > window.innerHeight;
+    backToTop.classList.toggle('visible', show);
+  }
+
+  if (backToTop) {
+    backToTop.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  updateBackToTop();
+
   // ─── Mobile Menu Toggle ────────────────────────────────────────────────
   const mobileToggle = document.getElementById('mobile-toggle');
   const navLinks = document.getElementById('nav-links');
@@ -125,6 +157,61 @@
           window.setLanguage(lang);
         }
       });
+    });
+  }
+
+  // ─── Screenshot Lightbox ───────────────────────────────────────────────
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightbox-img');
+  var lightboxCaption = document.getElementById('lightbox-caption');
+  var lightboxCounter = document.getElementById('lightbox-counter');
+  var screenshots = document.querySelectorAll('.screenshot[data-lightbox]');
+  var currentIndex = 0;
+
+  function openLightbox(index) {
+    if (!lightbox || !screenshots.length) return;
+    currentIndex = index;
+    var shot = screenshots[index];
+    var img = shot.querySelector('.screenshot__img');
+    var caption = shot.querySelector('.screenshot__caption');
+
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightboxCaption.textContent = caption ? caption.textContent : '';
+    lightboxCounter.textContent = 'Evidence ' + (index + 1) + ' of ' + screenshots.length;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function navigateLightbox(delta) {
+    var next = (currentIndex + delta + screenshots.length) % screenshots.length;
+    openLightbox(next);
+  }
+
+  screenshots.forEach(function (shot, i) {
+    shot.addEventListener('click', function () { openLightbox(i); });
+  });
+
+  if (lightbox) {
+    lightbox.querySelector('.lightbox__close').addEventListener('click', closeLightbox);
+    lightbox.querySelector('.lightbox__prev').addEventListener('click', function () { navigateLightbox(-1); });
+    lightbox.querySelector('.lightbox__next').addEventListener('click', function () { navigateLightbox(1); });
+
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') navigateLightbox(-1);
+      if (e.key === 'ArrowRight') navigateLightbox(1);
     });
   }
 
