@@ -37,8 +37,8 @@
   --text-bright: #F0EDE6;
   --text-primary: #D9D5CC;
   --text-body: #B3AFA6;
-  --text-muted: #8C8880;
-  --text-dim: #7A766C;
+  --text-muted: #9A968E;
+  --text-dim: #908C84;
   --text-faint: #5C5850;
   --text-golden: #E6CC66;
 
@@ -215,7 +215,7 @@ h4 {
 .section-subtitle {
   font-family: 'Crimson Pro', serif;
   font-size: clamp(0.95rem, 1.8vw, 1.15rem);
-  color: var(--text-muted);
+  color: var(--text-body);
   text-transform: none;
   letter-spacing: 0;
   font-weight: 400;
@@ -720,9 +720,10 @@ section + section::after {
 .hero__tagline {
   font-family: 'Crimson Pro', serif;
   font-size: clamp(1rem, 2.2vw, 1.3rem);
-  font-weight: 300;
-  color: var(--text-body);
+  font-weight: 400;
+  color: var(--text-primary);
   font-style: italic;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
   margin-bottom: var(--space-xs);
   max-width: 480px;
   opacity: 0;
@@ -732,10 +733,11 @@ section + section::after {
 .hero__subtitle {
   font-family: 'Oswald', sans-serif;
   font-size: clamp(0.7rem, 1.2vw, 0.82rem);
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--text-dim);
+  color: var(--text-body);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.6);
   margin-bottom: var(--space-xl);
   opacity: 0;
   animation: hero-element-in 0.8s var(--ease-out-expo) forwards 1.2s;
@@ -1201,7 +1203,7 @@ section + section::after {
 
 .showcase-card__desc {
   font-size: 0.82rem;
-  color: var(--text-muted);
+  color: var(--text-body);
   line-height: 1.5;
 }
 
@@ -1211,7 +1213,7 @@ section + section::after {
   font-family: 'Crimson Pro', serif;
   font-size: 0.95rem;
   font-style: italic;
-  color: var(--text-dim);
+  color: var(--text-muted);
   letter-spacing: 0.02em;
 }
 
@@ -1272,7 +1274,7 @@ section + section::after {
 
 .corrupt-mystery__desc {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--text-body);
   line-height: 1.7;
   margin-bottom: var(--space-2xl);
 }
@@ -1440,7 +1442,7 @@ section + section::after {
 
 .feature__desc {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--text-body);
   line-height: 1.65;
 }
 
@@ -1522,7 +1524,7 @@ section + section::after {
   font-family: 'Crimson Pro', serif;
   font-size: 0.85rem;
   font-style: italic;
-  color: var(--text-dim);
+  color: var(--text-muted);
   line-height: 1.6;
   max-width: 280px;
 }
@@ -1530,7 +1532,7 @@ section + section::after {
 .footer__section h4 {
   font-size: 0.7rem;
   letter-spacing: 0.12em;
-  color: var(--text-dim);
+  color: var(--text-muted);
   margin-bottom: var(--space-sm);
 }
 
@@ -1613,7 +1615,7 @@ section + section::after {
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--text-dim);
+  color: var(--text-muted);
   display: inline-flex;
   align-items: center;
   gap: 5px;
