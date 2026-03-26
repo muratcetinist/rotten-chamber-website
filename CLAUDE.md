@@ -12,6 +12,9 @@ The game repository lives at `../../` (parent `game-1/`). The game's own `CLAUDE
 - **Hosting:** GitHub Pages (repo: `muratcetinist/rotten-chamber-website`)
 - **Deploy:** automatic from `main` branch, no build step
 - **DNS:** Cloudflare DNS, CNAME file in repo root
+- **Cloudflare SSL/TLS:** must be **Full** (not Full strict). Strict mode causes 5xx errors because Cloudflare cannot validate GitHub Pages' Let's Encrypt origin certificate. This breaks Google crawling.
+- **Cloudflare "Always Use HTTPS":** ON (configured 2026-03-26)
+- **Google Search Console:** property verified at `rottenchamber.com`
 
 ## Tech Stack
 
@@ -38,7 +41,11 @@ website/
 │   ├── portraits/          Game portrait copies (legacy, mostly unused now)
 │   ├── backgrounds/        Game background copies (legacy)
 │   ├── icons/              Game icon copies (placeholder, to be replaced with SVG)
-│   └── favicon.png         Temporary favicon
+│   └── favicon.png         Source favicon (256x256 RGBA, council table)
+├── apple-touch-icon.png    180x180 RGB (dark bg, for iOS/Google thumbnail)
+├── favicon.ico             Multi-size ICO (16/32/48)
+├── favicon-32x32.png       32x32 browser tab favicon
+├── favicon-16x16.png       16x16 browser tab favicon
 ├── robots.txt              Crawler directives + sitemap reference
 ├── sitemap.xml             XML sitemap for search engines
 ├── .nojekyll               Disables Jekyll processing on GitHub Pages
