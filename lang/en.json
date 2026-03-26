@@ -20,6 +20,7 @@
 
   "howto.title": "How to Play",
   "howto.subtitle": "Uncover the corruption in four steps",
+  "howto.intro": "A single-player social deduction puzzle solved through logic alone.",
   "howto.step1.title": "Read",
   "howto.step1.desc": "Each official makes a statement. Some tell the truth. Some don't. Read carefully.",
   "howto.step2.title": "Deduce",
@@ -31,6 +32,7 @@
 
   "roles.title": "The Chamber",
   "roles.subtitle": "15 unique roles. Each with a statement, an agenda and something to hide.",
+  "roles.intro": "Every role speaks. Not every role tells the truth.",
   "roles.clean_title": "The Suspects",
   "roles.corrupt_title": "The Corrupt",
   "roles.more": "...and 6 more innocent roles to discover in-game.",
@@ -54,6 +56,7 @@
 
   "features.title": "Features",
   "features.subtitle": "What makes Rotten Chamber unique",
+  "features.intro": "A logic puzzle game built on deduction, not luck.",
   "feature.deduction.title": "Pure Deduction",
   "feature.deduction.desc": "No dice rolls. No card draws. Every puzzle is solvable through logic alone. If you got it wrong, you missed something.",
   "feature.campaign.title": "Campaign Mode",
