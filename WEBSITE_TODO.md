@@ -209,20 +209,20 @@ Not:
 
 ### Master
 
-- `external/website/assets/images/exclusive/hero_key_art_master.png`
-- `external/website/assets/images/exclusive/secondary_background_master.png`
-- `external/website/assets/images/exclusive/corrupt_mystery_master.png`
-- `external/website/assets/images/exclusive/dossier_texture_master.png`
-- `external/website/assets/images/exclusive/mayor_showcase_master.png`
-- `external/website/assets/images/exclusive/legal_advocate_showcase_master.png`
-- `external/website/assets/images/exclusive/council_chair_showcase_master.png`
-- `external/website/assets/images/exclusive/police_chief_showcase_master.png`
+- `website/assets/images/exclusive/hero_key_art_master.png`
+- `website/assets/images/exclusive/secondary_background_master.png`
+- `website/assets/images/exclusive/corrupt_mystery_master.png`
+- `website/assets/images/exclusive/dossier_texture_master.png`
+- `website/assets/images/exclusive/mayor_showcase_master.png`
+- `website/assets/images/exclusive/legal_advocate_showcase_master.png`
+- `website/assets/images/exclusive/council_chair_showcase_master.png`
+- `website/assets/images/exclusive/police_chief_showcase_master.png`
 
 ### Derived
 
-- `external/website/assets/images/exclusive/derived/hero_key_art_mobile.png`
-- `external/website/assets/images/exclusive/derived/hero_key_art_og.png`
-- `external/website/assets/images/exclusive/derived/secondary_background_mobile.png`
+- `website/assets/images/exclusive/derived/hero_key_art_mobile.png`
+- `website/assets/images/exclusive/derived/hero_key_art_og.png`
+- `website/assets/images/exclusive/derived/secondary_background_mobile.png`
 
 ---
 
