@@ -22,7 +22,7 @@ The game repository lives at `../../` (parent `game-1/`). The game's own `CLAUDE
 
 ## File Structure
 
-```
+```text
 website/
 ├── index.html              Single-page site
 ├── css/styles.css          All styles (variables, layout, components, responsive)
@@ -51,37 +51,45 @@ website/
 ## Key Conventions
 
 ### Writing Style
+
 - **No Oxford comma.** Write `A, B and C` not `A, B, and C`. Same for `or`.
 - **No em dash.** Use a colon, period or restructure the sentence instead.
 
 ### HTML & SEO
+
 - **Semantic HTML is mandatory.** Every element must use the correct tag for its purpose (e.g. `<blockquote>` for quotes, `<nav>` for navigation, `<section>` for thematic grouping).
 - **SEO opportunity is obligation.** If a change can serve SEO (alt text, keyword placement, structured data, heading hierarchy), it must. Do not leave SEO value on the table.
 
 ### Spoiler Policy
+
 - **No corrupt portraits** (`*_c.png`, `*_mc.png`, `*_fc.png`) displayed on site
 - **No flip-card reveal** mechanics (removed)
 - **Roles section** shows 4 showcase characters + a mystery block for corrupt side
 - **Mechanic details** kept minimal; the site sells atmosphere, not the full rulebook
 
 ### Content Accuracy
+
 Before editing any game-related content (role names, campaign numbers, mechanic descriptions), verify against the game repo:
+
 - Role names & ordering: `scripts/core/game_enums.gd` (`CORRUPT_DISPLAY_ORDER`, `ROLE_*` constants)
 - Campaign structure: `scripts/systems/run_data.gd` (3 acts, 15 levels each = 45 total)
 - Professional abilities: `scripts/data/professional_data.gd`
 - Annotation stamps: `scripts/core/game_enums.gd` (innocent, corrupt, suspicious)
 
 ### Asset Tiers
+
 1. **Exclusive** (`assets/images/exclusive/`): web-only, AI-generated art. These are the primary visuals.
 2. **Game copies** (`portraits/`, `backgrounds/`, `icons/`): copied from game repo for placeholder use. Icons in How to Play are placeholders to be replaced with custom SVG.
 
 ### i18n
+
 - English text is embedded directly in HTML (source of truth for EN)
 - `lang/en.json` is a parallel reference. Keep it in sync when HTML content changes.
 - `data-i18n` keys on elements; `data-i18n-attr` for attributes
 - Only English is active; other languages are commented out in `i18n.js`
 
 ### CSS Architecture
+
 - CSS custom properties in `:root` for colors, spacing, timing
 - BEM-like naming: `.block__element--modifier`
 - Responsive breakpoints: 1024px (tablet), 640px (mobile), 380px (small mobile)
@@ -89,8 +97,9 @@ Before editing any game-related content (role names, campaign numbers, mechanic 
 - No CSS preprocessor. Plain CSS only.
 
 ### Sections
+
 | Section | Description |
-|---|---|
+| --- | --- |
 | Hero | Key art background, title, CTA buttons |
 | Screenshots | 6 real gameplay screenshots with lightbox |
 | How to Play | 4-step overview with placeholder icons |
