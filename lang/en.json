@@ -67,6 +67,23 @@
   "feature.tutorial.title": "Interactive Tutorial",
   "feature.tutorial.desc": "A guided tutorial walks you through reading statements, using abilities and making your first arrest. Learn by doing, not by reading.",
 
+  "nav.faq": "FAQ",
+
+  "faq.title": "Frequently Asked Questions",
+  "faq.subtitle": "Common questions about this social deduction puzzle game",
+  "faq.q1.question": "What is a social deduction game?",
+  "faq.q1.answer": "A social deduction game is a genre where players must figure out who among them is lying or hiding their true role. Traditionally multiplayer, Rotten Chamber reimagines this as a single-player logic puzzle where you analyze statements and cross-reference clues to identify the corrupt.",
+  "faq.q2.question": "Can you play social deduction games alone?",
+  "faq.q2.answer": "Yes. Rotten Chamber is a solo social deduction game designed from the ground up for a single player. Instead of reading other players, you read role-based statements and use pure logic to deduce who is corrupt.",
+  "faq.q3.question": "What makes Rotten Chamber different from other social deduction games?",
+  "faq.q3.answer": "Most social deduction games like Werewolf, Mafia or Among Us require a group. Rotten Chamber removes the social element and replaces it with a logic puzzle: every statement follows deterministic rules, every level is solvable through deduction alone and there is no randomness in the outcome.",
+  "faq.q4.question": "How does the logic puzzle gameplay work?",
+  "faq.q4.answer": "Each official around a circular table makes a statement based on their role. Innocent officials tell the truth while corrupt officials lie. You cross-reference these statements, use active abilities to test your theories and arrest those you believe are corrupt. Three wrong arrests and you lose.",
+  "faq.q5.question": "Is Rotten Chamber a multiplayer game?",
+  "faq.q5.answer": "No. Rotten Chamber is purely single-player. The game features 45 campaign levels across three acts, custom game modes and an interactive tutorial, all designed for solo play.",
+  "faq.q6.question": "Is Rotten Chamber available on Steam?",
+  "faq.q6.answer": "Rotten Chamber is currently in development. The Steam page will be available soon. Add it to your wishlist to get notified when the social deduction puzzle game launches.",
+
   "footer.studio_placeholder": "Developer studio info coming soon",
   "footer.links_title": "Links",
   "footer.press_kit": "Press Kit",
