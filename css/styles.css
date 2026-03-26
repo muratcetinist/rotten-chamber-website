@@ -1736,6 +1736,20 @@ section + section::after {
   color: var(--text-muted);
 }
 
+.footer__press-link {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color var(--duration-fast);
+}
+
+.footer__press-link:hover {
+  color: var(--red);
+}
+
 .footer__godot {
   font-family: 'Oswald', sans-serif;
   font-size: 0.65rem;
