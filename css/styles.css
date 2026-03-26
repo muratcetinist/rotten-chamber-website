@@ -1455,6 +1455,62 @@ section + section::after {
   line-height: 1.65;
 }
 
+/* ─── Narrative — cinematic blockquote ──────────────────────────────────── */
+.narrative {
+  position: relative;
+  padding: var(--space-3xl) 0;
+  background: var(--bg-deepest);
+  overflow: hidden;
+}
+
+.narrative__accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--red), transparent);
+  opacity: 0.5;
+}
+
+.narrative .container {
+  max-width: 720px;
+}
+
+.narrative__quote {
+  border: none;
+  margin: 0 0 var(--space-xl) 0;
+  padding: 0 0 0 var(--space-lg);
+  border-left: 2px solid var(--red-dark);
+  position: relative;
+}
+
+.narrative__quote p {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.narrative__answer {
+  padding-left: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.narrative__answer p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-body);
+}
+
+.narrative__answer p:last-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
 /* ─── FAQ ──────────────────────────────────────────────────────────────── */
 .faq {
   position: relative;
@@ -2021,6 +2077,14 @@ section + section::after {
 
   .corrupt-mystery__overlay {
     background: linear-gradient(to bottom, transparent 40%, var(--bg-card) 100%);
+  }
+
+  .narrative__quote p {
+    font-size: 1.05rem;
+  }
+
+  .narrative__accent {
+    display: none;
   }
 
   .footer__inner {

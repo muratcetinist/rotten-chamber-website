@@ -54,6 +54,10 @@ website/
 - **No Oxford comma.** Write `A, B and C` not `A, B, and C`. Same for `or`.
 - **No em dash.** Use a colon, period or restructure the sentence instead.
 
+### HTML & SEO
+- **Semantic HTML is mandatory.** Every element must use the correct tag for its purpose (e.g. `<blockquote>` for quotes, `<nav>` for navigation, `<section>` for thematic grouping).
+- **SEO opportunity is obligation.** If a change can serve SEO (alt text, keyword placement, structured data, heading hierarchy), it must. Do not leave SEO value on the table.
+
 ### Spoiler Policy
 - **No corrupt portraits** (`*_c.png`, `*_mc.png`, `*_fc.png`) displayed on site
 - **No flip-card reveal** mechanics (removed)
