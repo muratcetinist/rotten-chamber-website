@@ -537,6 +537,111 @@ a:hover {
   border-radius: 50%;
 }
 
+/* ─── Download All ────────────────────────────────────────────────────── */
+.pk-download-all {
+  margin-bottom: var(--space-lg);
+}
+
+.pk-download--all {
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.75rem;
+}
+
+/* ─── TBA (placeholder replacement) ──────────────────────────────────── */
+.pk-tba {
+  font-style: italic;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+/* ─── Creator / Streamer Policy ──────────────────────────────────────── */
+.pk-policy__summary {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: var(--space-md);
+}
+
+.pk-policy__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.pk-policy__list li {
+  position: relative;
+  padding-left: var(--space-md);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.pk-policy__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.pk-policy__note {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+/* ─── System Requirements ────────────────────────────────────────────── */
+.pk-sysreq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.pk-sysreq__column h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.pk-sysreq__list {
+  display: grid;
+  gap: 0;
+}
+
+.pk-sysreq__row {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  border-bottom: 1px solid var(--border-card);
+  padding: var(--space-xs) 0;
+}
+
+.pk-sysreq__row:last-child {
+  border-bottom: none;
+}
+
+.pk-sysreq__row dt {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.pk-sysreq__row dd {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
 /* ─── Contact ──────────────────────────────────────────────────────────── */
 .pk-contact {
   display: grid;
@@ -621,6 +726,11 @@ a:hover {
   }
 
   .pk-contact {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .pk-sysreq {
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
