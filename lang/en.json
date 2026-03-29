@@ -90,7 +90,7 @@
   "faq.q5.question": "Is Rotten Chamber a multiplayer game?",
   "faq.q5.answer": "No. Rotten Chamber is purely single-player. The game features 45 campaign levels across three acts, custom game modes and an interactive tutorial, all designed for solo play.",
   "faq.q6.question": "Is Rotten Chamber available on Steam?",
-  "faq.q6.answer": "Rotten Chamber is currently in development. The Steam page will be available soon. Add it to your wishlist to get notified when the social deduction puzzle game launches.",
+  "faq.q6.answer": "Yes. Rotten Chamber has a Steam store page. Add it to your wishlist to get notified when the social deduction puzzle game launches.",
 
   "presskit.back": "\u2190 rottenchamber.com",
   "presskit.title": "Press Kit",
@@ -117,9 +117,9 @@
   "presskit.fact.status_value": "In development",
   "presskit.fact.players": "Players",
   "presskit.fact.developer": "Developer",
-  "presskit.fact.developer_value": "To be announced",
+  "presskit.fact.developer_value": "Cetin Games",
   "presskit.fact.publisher": "Publisher",
-  "presskit.fact.publisher_value": "To be announced",
+  "presskit.fact.publisher_value": "Cetin Games",
   "presskit.fact.languages": "Languages",
   "presskit.fact.languages_value": "English, Turkish",
   "presskit.fact.modes": "Modes",
@@ -130,7 +130,7 @@
   "presskit.fact.roles_value": "15 total roles",
   "presskit.fact.website": "Website",
   "presskit.fact.press_contact": "Press Contact",
-  "presskit.fact.steam_value": "Coming soon",
+  "presskit.fact.steam_value": "Store Page",
   "presskit.fact.release": "Release",
   "presskit.fact.release_value": "To be announced",
 
@@ -211,7 +211,7 @@
   "presskit.branding.rule3": "Do not stretch, rotate or alter the logo colors",
 
   "presskit.developer.title": "About the Developer",
-  "presskit.developer.coming_soon": "Developer information coming soon.",
+  "presskit.developer.coming_soon": "Cetin Games",
 
   "presskit.keyart.download_all": "Download All Key Art (ZIP)",
   "presskit.screenshots.download_all": "Download All Screenshots (ZIP)",
@@ -253,7 +253,7 @@
 
   "presskit.footer.back": "Back to main site",
 
-  "footer.studio_placeholder": "Developer studio info coming soon",
+  "footer.studio_placeholder": "Cetin Games",
   "footer.links_title": "Links",
   "footer.press_kit": "Press Kit",
   "footer.privacy": "Privacy Policy",
