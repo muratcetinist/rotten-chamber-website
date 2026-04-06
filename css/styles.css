@@ -141,7 +141,7 @@ html {
 }
 
 body {
-  font-family: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+  font-family: 'Fira Sans', sans-serif;
   background-color: var(--bg-void);
   color: var(--text-body);
   line-height: 1.75;
@@ -213,7 +213,7 @@ h4 {
 }
 
 .section-subtitle {
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: clamp(0.95rem, 1.8vw, 1.15rem);
   color: var(--text-body);
   text-transform: none;
@@ -727,7 +727,7 @@ section + section::after {
 }
 
 .hero__tagline {
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: clamp(1rem, 2.2vw, 1.3rem);
   font-weight: 400;
   color: var(--text-primary);
@@ -1225,7 +1225,7 @@ section + section::after {
 .roles__more {
   text-align: center;
   margin-top: var(--space-xl);
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.95rem;
   font-style: italic;
   color: var(--text-muted);
@@ -1492,7 +1492,7 @@ section + section::after {
 }
 
 .narrative__quote p {
-  font-family: 'Crimson Pro', Georgia, serif;
+  font-family: 'Fira Sans', sans-serif;
   font-style: italic;
   font-size: 1.25rem;
   line-height: 1.7;
@@ -1653,7 +1653,7 @@ section + section::after {
 }
 
 .footer__tagline {
-  font-family: 'Crimson Pro', serif;
+  font-family: 'Fira Sans', sans-serif;
   font-size: 0.85rem;
   font-style: italic;
   color: var(--text-muted);

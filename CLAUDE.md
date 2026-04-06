@@ -20,7 +20,7 @@ The game repository lives at `../` (parent repo root). The game's own `CLAUDE.md
 
 - Plain HTML5 / CSS3 / vanilla JS
 - No bundler, no npm, no build step
-- Google Fonts loaded via CDN (Oswald, Crimson Pro)
+- Google Fonts loaded via CDN (Oswald, Fira Sans)
 - i18n: JSON-based with `data-i18n` attributes; English is the HTML default
 
 ## File Structure
