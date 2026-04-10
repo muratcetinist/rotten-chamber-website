@@ -170,9 +170,9 @@
   "presskit.why.w4": "The political chamber setting gives the game a distinct identity compared to village, party or sci-fi social deduction formats.",
 
   "presskit.keyart.title": "Key Art & Logo",
-  "presskit.keyart.hero_label": "Key Art (Full Resolution)",
+  "presskit.keyart.hero_label": "Key Art (Atmosphere)",
+  "presskit.keyart.characters_label": "Key Art (Characters)",
   "presskit.keyart.vertical_label": "Vertical Key Art (Store)",
-  "presskit.keyart.og_label": "Social Share Image (1200\u00d7630)",
   "presskit.keyart.logo_label": "Logo Wordmark",
   "presskit.download": "Download PNG",
 

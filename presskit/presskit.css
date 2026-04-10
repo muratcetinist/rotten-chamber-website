@@ -51,7 +51,9 @@
 }
 
 /* ─── Reset & Base ─────────────────────────────────────────────────────── */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -294,6 +296,8 @@ a:hover {
 }
 
 .pk-media-item {
+  display: flex;
+  flex-direction: column;
   background: var(--bg-deepest);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-md);
@@ -307,6 +311,7 @@ a:hover {
 
 .pk-media-item a:first-child {
   display: block;
+  flex: 1;
 }
 
 .pk-media-item img {
@@ -326,6 +331,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
   padding: var(--space-sm) var(--space-md);
   border-top: 1px solid var(--border-card);
 }
@@ -715,6 +721,7 @@ a:hover {
 
 /* ─── Responsive ───────────────────────────────────────────────────────── */
 @media (max-width: 640px) {
+
   .pk-media-grid--keyart,
   .pk-media-grid--screenshots {
     grid-template-columns: 1fr;
